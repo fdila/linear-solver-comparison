@@ -60,8 +60,4 @@ with open('../reports/python.csv', 'w+', newline='') as file:
                 
             mem_usage = max(mem_usage)
             writer.writerow([filename, chol, tot_time, mem_usage, erel])
-            #print(time)     
-            #print(erel)
-            #print(chol)
-            #print(mem_usage)
             
