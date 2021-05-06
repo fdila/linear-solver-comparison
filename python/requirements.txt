@@ -1,1 +1,1 @@
-Cython scipy numpy scikit-sparse scikit-umfpack
+Cython scipy numpy scikit-sparse scikit-umfpack memory_profiler
