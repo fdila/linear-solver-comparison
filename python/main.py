@@ -37,7 +37,7 @@ def sparse_solve(A,b):
 with open('../reports/python.csv', 'w+', newline='') as file:
     writer = csv.writer(file)
     # Set csv header 
-    writer.writerow(["Matrix", "Cholesky", "Time", "Memory", "RelError"])
+    writer.writerow(["Matrix", "Size", "Time", "Memory", "RelError", "isCholesky"])
     
     for filename in os.listdir('../matrixes/'):
         
@@ -59,5 +59,5 @@ with open('../reports/python.csv', 'w+', newline='') as file:
             (mem_usage, [chol, tot_time, erel]) = memory_usage((sparse_solve, (A, b)), retval=True)
                 
             mem_usage = max(mem_usage)
-            writer.writerow([filename, chol, tot_time, mem_usage, erel])
+            writer.writerow([filename, size, tot_time, mem_usage, erel, chol])
             

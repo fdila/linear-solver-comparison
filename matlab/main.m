@@ -1,5 +1,10 @@
 listing = dir('../matrixes');
 
+csv_file = fopen('../reports/matlab.csv','w');
+C={'Matrix', 'Size', 'Time' ,'Memory','RelError'};
+fprintf(csv_file,'%s,%s,%s,%s,%s\n',C{:});
+formatSpec = '%s,%d,%f,%f,%e\n';
+
 for file_index = 3:length(listing)
     filename = strcat('../matrixes/', listing(file_index).name);
     [A, rows, cols, entries] = mmread(filename);
@@ -12,7 +17,7 @@ for file_index = 3:length(listing)
         profile clear;
         profile('-memory','on');
         setpref('profiler','showJitLines',1);
-
+        
         x = A\b;
 
         erel = norm(x-xe) / norm(xe);
@@ -24,10 +29,13 @@ for file_index = 3:length(listing)
 
         t = profilerInfo.FunctionTable(functionRow).TotalTime; 
         mem = profilerInfo.FunctionTable(functionRow).TotalMemAllocated; 
-
-        res = [filename sizeA t mem erel];
+        
+        C={listing(file_index).name, sizeA, t, mem, erel};
+        fprintf(csv_file,formatSpec,C{:});
+        
         catch exception
             disp(exception.message);
-            res = [filename sizeA "N/A" "N/A" "N/A"];
+            res = [listing(file_index).name sizeA "N/A" "N/A" "N/A"];
     end
 end
+fclose(csv_file);
