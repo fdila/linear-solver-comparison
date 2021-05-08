@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "PYTHON:"
 cd python;
-python main.py;
+python3 main.py;
 echo "MATLAB:"
 cd ../matlab;
 bash exec.sh;
