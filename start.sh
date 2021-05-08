@@ -7,5 +7,5 @@ cd ../matlab;
 bash exec.sh;
 echo "OCTAVE:"
 cd ../octave;
-# exec octave
+octave --persist main.m
 cd ..;
