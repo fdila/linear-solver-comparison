@@ -7,10 +7,8 @@ formatSpec = '%s,%d,%f,%f,%e\n';
 
 for file_index = 3:length(listing)
     filename = strcat('../matrixes/', listing(file_index).name);
-    %[A, rows, cols, entries] = mmread(filename);
-    
-    load(filename);
-    A = Problem.A;
+    disp(strcat("import ", filename));
+    [A, rows, cols, entries] = mmread(filename);
     disp(strcat("run ", filename));
     sizeA = size(A,1);
     xe = ones(sizeA,1);
@@ -21,10 +19,8 @@ for file_index = 3:length(listing)
         profile('-memory','on');
         setpref('profiler','showJitLines',1);
         
-        disp("inizio");
         x = my_solve(A,b);
-        disp("porco");
-        
+
         erel = norm(x-xe) / norm(xe);
 
         profilerInfo = profile('info');

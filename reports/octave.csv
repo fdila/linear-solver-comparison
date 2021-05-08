@@ -1,1 +1,3 @@
 Matrix,Size,Time,Memory,RelError
+G3_circuit.mtx,1585478,0.000012,0.000000,3.883396e-12
+ifiss_mat.mtx,96307,0.000009,0.000000,1.001640e-13
