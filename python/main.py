@@ -42,7 +42,7 @@ with open('../reports/python.csv', 'w+', newline='') as file:
     for filename in os.listdir('../matrixes/'):
         
         if filename.endswith(".mtx"):
-            print('Analysing ' + filename + ' ...')
+            print('Import ' + filename + ' ...')
 
             # Read the matrix
             A = mmread('../matrixes/' + filename)
@@ -54,10 +54,12 @@ with open('../reports/python.csv', 'w+', newline='') as file:
 
             # Create b
             b = A*xe
-            
+            print('Run ' + filename + ' ...')
+
             # Solve
             (mem_usage, [chol, tot_time, erel]) = memory_usage((sparse_solve, (A, b)), retval=True)
-                
-            mem_usage = max(mem_usage)
+            
+            #convert from MiB to MB
+            mem_usage = max(mem_usage)*(2**20 / 10**6)
             writer.writerow([filename, size, tot_time, mem_usage, erel, chol])
             

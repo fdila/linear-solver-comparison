@@ -1,2 +1,2 @@
 #!/bin/bash
-matlab -nodisplay -nojvm -nosplash -nodesktop -r "run('main.m'); end; quit;"
+matlab -nodisplay -nojvm -nosplash -nodesktop -r "run('main.m'); exit;"

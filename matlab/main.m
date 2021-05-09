@@ -29,7 +29,7 @@ for file_index = 3:length(listing)
         functionRow = find(strcmp(functionNames(:), 'my_solve'));
 
         t = profilerInfo.FunctionTable(functionRow).TotalTime; 
-        mem = profilerInfo.FunctionTable(functionRow).TotalMemAllocated; 
+        mem = (profilerInfo.FunctionTable(functionRow).PeakMem)/1000; 
         
         C={listing(file_index).name, sizeA, t, mem, erel};
         fprintf(csv_file,formatSpec,C{:});
