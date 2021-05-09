@@ -20,9 +20,11 @@ for file_index = 3:length(listing)
         profile off;
         profile clear;
         profile on;
-       
+        
+        spparms('spumoni', 2);
+        tic;
         x = my_solve(A,b);
-  
+        tempo = toc;
         profile off;  
 
         erel = norm(x-xe) / norm(xe);

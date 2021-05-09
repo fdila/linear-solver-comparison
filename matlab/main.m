@@ -19,6 +19,7 @@ for file_index = 3:length(listing)
         profile('-memory','on');
         setpref('profiler','showJitLines',1);
         
+        spparms('spumoni', 2);
         x = my_solve(A,b);
 
         erel = norm(x-xe) / norm(xe);
@@ -29,7 +30,8 @@ for file_index = 3:length(listing)
         functionRow = find(strcmp(functionNames(:), 'my_solve'));
 
         t = profilerInfo.FunctionTable(functionRow).TotalTime; 
-        mem = (profilerInfo.FunctionTable(functionRow).PeakMem)/1000; 
+        %convert from kb to MB
+        mem = (profilerInfo.FunctionTable(functionRow).PeakMem)/8000; 
         
         C={listing(file_index).name, sizeA, t, mem, erel};
         fprintf(csv_file,formatSpec,C{:});
