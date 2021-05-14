@@ -18,8 +18,9 @@ def sparse_solve(A,b):
     start = time.perf_counter()
     try:
         # Cholesky
-        factor = cholesky(A)
-        x = factor(b)
+        #factor = cholesky(A)
+        #x = factor(b)
+        x = cholesky(A)(b)
         
     except Exception as e:
         # Ops. You can't use Cholesky.
