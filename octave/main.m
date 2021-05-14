@@ -17,27 +17,15 @@ for file_index = 3:length(listing)
     b = A*xe;
 
     try
-        profile off;
-        profile clear;
-        profile on;
-        
         spparms('spumoni', 2);
+        
         tic;
         x = my_solve(A,b);
         tempo = toc;
-        profile off;  
 
         erel = norm(x-xe) / norm(xe);
-
-        profilerInfo = profile('info');
-
-        functionNames = {profilerInfo.FunctionTable.FunctionName};
-        functionRow = find(strcmp(functionNames(:), 'my_solve'));
         
-        t = profilerInfo.FunctionTable(functionRow).TotalTime; 
-        %mem = profilerInfo.FunctionTable(functionRow).TotalMemAllocated; 
-        
-        C={listing(file_index).name, sizeA, t, 0, erel};
+        C={listing(file_index).name, sizeA, tempo, 0, erel};
         fprintf(csv_file,formatSpec,C{:});
         
         catch exception
