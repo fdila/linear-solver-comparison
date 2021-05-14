@@ -33,3 +33,4 @@ for file_index = 3:length(listing)
     end
 end
 fclose(csv_file);
+quit;
