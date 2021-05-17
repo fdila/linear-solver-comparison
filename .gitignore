@@ -1,7 +1,5 @@
 ### DATA ###
-/matrixes/*
-/other_matrixes/*
-
+*.mtx
 
 ### MATLAB ###
 # Windows default autosave extension
