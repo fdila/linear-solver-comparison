@@ -18,8 +18,9 @@ def sparse_solve(A,b):
     start = time.perf_counter()
     try:
         # Cholesky
-        factor = cholesky(A)
-        x = factor(b)
+        #factor = cholesky(A)
+        #x = factor(b)
+        x = cholesky(A)(b)
         
     except Exception as e:
         # Ops. You can't use Cholesky.
@@ -37,12 +38,12 @@ def sparse_solve(A,b):
 with open('../reports/python.csv', 'w+', newline='') as file:
     writer = csv.writer(file)
     # Set csv header 
-    writer.writerow(["Matrix", "Cholesky", "Time", "Memory", "RelError"])
+    writer.writerow(["Matrix", "Size", "Time", "Memory", "RelError", "isCholesky"])
     
     for filename in os.listdir('../matrixes/'):
         
         if filename.endswith(".mtx"):
-            print('Analysing ' + filename + ' ...')
+            print('Import ' + filename + ' ...')
 
             # Read the matrix
             A = mmread('../matrixes/' + filename)
@@ -54,10 +55,12 @@ with open('../reports/python.csv', 'w+', newline='') as file:
 
             # Create b
             b = A*xe
-            
+            print('Run ' + filename + ' ...')
+
             # Solve
             (mem_usage, [chol, tot_time, erel]) = memory_usage((sparse_solve, (A, b)), retval=True)
-                
-            mem_usage = max(mem_usage)
-            writer.writerow([filename, chol, tot_time, mem_usage, erel])
+            
+            #convert from MiB to MB
+            mem_usage = max(mem_usage)*(2**20 / 10**6)
+            writer.writerow([filename, size, tot_time, mem_usage, erel, chol])
             
