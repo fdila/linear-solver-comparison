@@ -14,16 +14,18 @@ for file_index = 3:length(listing)
     xe = ones(sizeA,1);
     b = A*xe;
 
-    try        
+    try 
+        diary on
         spparms('spumoni', 2);
         
         tic;
         x = my_solve(A,b);
+        diary off  % until this command is executed
         tempo = toc;
         
         erel = norm(x-xe) / norm(xe);
         
-        C={listing(file_index).name, sizeA, tempo, mem, erel};
+        C={listing(file_index).name, sizeA, tempo, 0, erel};
         fprintf(csv_file,formatSpec,C{:});
         
         catch exception
