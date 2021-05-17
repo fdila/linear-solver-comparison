@@ -7,35 +7,25 @@ from scipy.io import mmread
 from scipy.linalg import norm
 from scipy.sparse import csc_matrix
 from scipy.sparse.linalg import spsolve
-
-from sksparse.cholmod import cholesky
-
-from memory_profiler import memory_usage
+import psutil
 
 def sparse_solve(A,b):
 
-    chol = True
+    chol = False
     start = time.perf_counter()
-    try:
-        # Cholesky
-        #factor = cholesky(A)
-        #x = factor(b)
-        x = cholesky(A)(b)
-        
-    except Exception as e:
-        # Ops. You can't use Cholesky.
-        chol = False
-        # Use spsolve
-        x = spsolve(A, b)   
+    # Ops. You can't use Cholesky.
+    chol = False
+    # Use spsolve
+    x = spsolve(A, b)   
 
-    finally:
-        stop = time.perf_counter()
-        fntime = stop - start
-        erel = norm(x - xe) / norm(xe)
+    stop = time.perf_counter()
+    fntime = stop - start
+    erel = norm(x - xe) / norm(xe)
 
     return [chol, fntime, erel]
-    
-with open('../reports/python.csv', 'w+', newline='') as file:
+
+process = psutil.Process(os.getpid())
+with open('../reports/python_win.csv', 'w+', newline='') as file:
     writer = csv.writer(file)
     # Set csv header 
     writer.writerow(["Matrix", "Size", "Time", "Memory", "RelError", "isCholesky"])
@@ -58,9 +48,9 @@ with open('../reports/python.csv', 'w+', newline='') as file:
             print('Run ' + filename + ' ...')
 
             # Solve
-            (mem_usage, [chol, tot_time, erel]) = memory_usage((sparse_solve, (A, b)), retval=True)
+            [chol, tot_time, erel] = sparse_solve(A,b)
             
-            #convert from MiB to MB
-            mem_usage = max(mem_usage)*(2**20 / 10**6)
+            #convert from byte to MB
+            mem_usage = process.memory_info().peak_wset / 10**6
             writer.writerow([filename, size, tot_time, mem_usage, erel, chol])
             

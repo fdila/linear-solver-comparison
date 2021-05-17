@@ -16,7 +16,7 @@ for file_index = 3:length(listing)
     xe = ones(sizeA,1);
     b = A*xe;
 
-    try
+    try 
         spparms('spumoni', 2);
         
         tic;
@@ -33,4 +33,4 @@ for file_index = 3:length(listing)
     end
 end
 fclose(csv_file);
-quit;
+%quit;
