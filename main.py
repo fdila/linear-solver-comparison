@@ -78,7 +78,7 @@ def spumoni_to_csv(lang = 'matlab', command = 'touch exec.sh'):
     print(data)
 
     # Save to CSV
-    with open('./reports/ ' + lang + '.csv', 'w+', newline='') as file:
+    with open('./reports/' + lang + '.csv', 'w+', newline='') as file:
         writer = csv.writer(file)
         # Set csv header 
         writer.writerow(["Matrix", "Size", "Time", "Memory", "RelError", "isCholesky"])
