@@ -17,6 +17,7 @@ for file_index = 3:length(listing)
     b = A*xe;
 
     try 
+        diary on
         spparms('spumoni', 2);
         
         tic;
@@ -24,6 +25,11 @@ for file_index = 3:length(listing)
         tempo = toc;
 
         erel = norm(x-xe) / norm(xe);
+
+        fprintf('out-time: %f\n', tempo);
+        fprintf('out-erel: %f\n', erel);
+
+        diary off  % until this command is executed
         
         C={listing(file_index).name, sizeA, tempo, 0, erel};
         fprintf(csv_file,formatSpec,C{:});

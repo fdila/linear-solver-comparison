@@ -20,13 +20,20 @@ for file_index = 3:length(listing)
         
         tic;
         x = my_solve(A,b);
-        diary off  % until this command is executed
+        
         tempo = toc;
         
         erel = norm(x-xe) / norm(xe);
+
+        fprintf('out-time: %f\n', tempo);
+        fprintf('out-erel: %f\n', erel);
+
+        diary off  % until this command is executed
         
         C={listing(file_index).name, sizeA, tempo, 0, erel};
         fprintf(csv_file,formatSpec,C{:});
+
+        
         
         catch exception
             disp(exception.message);
