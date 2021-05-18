@@ -25,8 +25,8 @@ for file_index = 3:length(listing)
         
         erel = norm(x-xe) / norm(xe);
 
-        fprintf('out-time: %f\n', tempo);
-        fprintf('out-erel: %f\n', erel);
+        fprintf('out-time: %e\n', tempo);
+        fprintf('out-erel: %e\n', erel);
 
         diary off  % until this command is executed
         
