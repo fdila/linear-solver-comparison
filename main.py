@@ -8,8 +8,12 @@ def spumoni_to_csv(lang = 'matlab', command = 'touch exec.sh'):
     filename = 'diary'
     out = os.path.join('./' + lang, filename)
 
-    # Command to exec 
-    command = 'cd ' + lang + ';' + command + ' > /dev/null 2> /dev/null' + ';cd ..;'
+    # Command to exec
+    if lang == 'matlab':
+        command = 'cd ' + lang + ';' + command + ' > /dev/null 2> /dev/null' + ';cd ..;'
+    elif lang == 'octave':
+        command = 'cd ' + lang + ';' + command + ' > diary 2>&1' + ';cd ..;'
+
 
     # Remove old not-removed out
     try:
@@ -89,7 +93,8 @@ def spumoni_to_csv(lang = 'matlab', command = 'touch exec.sh'):
 
     # Delete the log file
     try:
-        os.remove(out)
+        # TODO io nel dubbio li terrei fino alla run successiva
+        #os.remove(out)
         pass
     except:
         pass
@@ -100,3 +105,4 @@ def spumoni_to_csv(lang = 'matlab', command = 'touch exec.sh'):
 # Exec
 spumoni_to_csv('matlab', 'matlab -nodisplay -nojvm -nosplash -nodesktop -r "run(\'main.m\'); exit;"')
 spumoni_to_csv('octave', 'octave --no-gui --eval "run(\'main.m\'); exit;"')
+##TODO eseguiamo qui anche il codice py?

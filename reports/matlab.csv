@@ -1,2 +1,2 @@
-Matrix,Size,Time,Memory,RelError
-GT01R.mtx,7980,0.144080,0.000000,3.054077e-15
+Matrix,Size,Time,Memory,RelError,isCholesky
+GT01R.mtx,7977,6.957450e-01,222.8,2.415960e-15,False

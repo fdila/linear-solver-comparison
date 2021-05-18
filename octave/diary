@@ -1,0 +1,156 @@
+QStandardPaths: XDG_RUNTIME_DIR points to non-existing path '/run/user/1000/snap.octave', please create it with 0700 permissions.
+Qt: Session management error: Could not open network socket
+import../matrixes/GT01R.mtx
+run../matrixes/GT01R.mtx
+warning: calculating sparse matrix type
+warning: called from
+    my_solve at line 2 column 5
+    main at line 19 column 11
+    run at line 93 column 5
+
+warning: full matrix
+warning: called from
+    my_solve at line 2 column 5
+    main at line 19 column 11
+    run at line 93 column 5
+
+UMFPACK V5.7.6 (May 4, 2016), Control:
+    Matrix entry defined as: double
+    Int (generic integer) defined as: SuiteSparse_long
+
+    0: print level: 2
+    1: dense row parameter:    0.2
+        "dense" rows have    > max (16, (0.2)*16*sqrt(n_col) entries)
+    2: dense column parameter: 0.2
+        "dense" columns have > max (16, (0.2)*16*sqrt(n_row) entries)
+    3: pivot tolerance: 0.1
+    4: block size for dense matrix kernels: 32
+    5: strategy: 0 (auto)
+    10: ordering: 1 AMD/COLAMD
+    11: singleton filter: enabled
+    6: initial allocation ratio: 0.7
+    7: max iterative refinement steps: 2
+    13: Q fixed during numerical factorization: 1 (yes)
+    14: AMD dense row/col parameter:    10
+       "dense" rows/columns have > max (16, (10)*sqrt(n)) entries
+        Only used if the AMD ordering is used.
+    15: diagonal pivot tolerance: 0.1
+        Only used if diagonal pivoting is attempted.
+    16: scaling: 1 (divide each row by sum of abs. values in each row)
+    17: frontal matrix allocation ratio: 0.5
+    18: drop tolerance: 0
+    19: AMD and COLAMD aggressive absorption: 1 (yes)
+
+    The following options can only be changed at compile-time:
+    8: BLAS library used:  Fortran BLAS.  size of BLAS integer: 4
+    compiled for ANSI C
+    POSIX C clock_getttime.
+    computer/operating system: Linux
+    size of int: 4 SuiteSparse_long: 8 Int: 8 pointer: 8 double: 8 Entry: 8 (in bytes)
+
+UMFPACK V5.7.6 (May 4, 2016), Info:
+    matrix entry defined as:          double
+    Int (generic integer) defined as: SuiteSparse_long
+    BLAS library used: Fortran BLAS.  size of BLAS integer: 4
+    MATLAB:                           no.
+    CPU timer:                        POSIX C clock_getttime ( ) routine.
+    number of rows in matrix A:       7980
+    number of columns in matrix A:    7980
+    entries in matrix A:              430909
+    memory usage reported in:         16-byte Units
+    size of int:                      4 bytes
+    size of SuiteSparse_long:         8 bytes
+    size of pointer:                  8 bytes
+    size of numerical entry:          8 bytes
+
+    strategy used:                    symmetric
+    ordering used:                    amd on A+A'
+    modify Q during factorization:    no
+    prefer diagonal pivoting:         yes
+    pivots with zero Markowitz cost:               3
+    submatrix S after removing zero-cost pivots:
+        number of "dense" rows:                    0
+        number of "dense" columns:                 0
+        number of empty rows:                      0
+        number of empty columns                    0
+        submatrix S square and diagonal preserved
+    pattern of square submatrix S:
+        number rows and columns                    7977
+        symmetry of nonzero pattern:               0.881325
+        nz in S+S' (excl. diagonal):               473024
+        nz on diagonal of matrix S:                7977
+        fraction of nz on diagonal:                1.000000
+    AMD statistics, for strict diagonal pivoting:
+        est. flops for LU factorization:           6.66807e+08
+        est. nz in L+U (incl. diagonal):           2921655
+        est. largest front (# entries):            137641
+        est. max nz in any column of L:            371
+        number of "dense" rows/columns in S+S':    0
+    symbolic factorization defragmentations:       0
+    symbolic memory usage (Units):                 829955
+    symbolic memory usage (MBytes):                12.7
+    Symbolic size (Units):                         21597
+    Symbolic size (MBytes):                        0
+    symbolic factorization wallclock time(sec):    0.05
+
+    matrix scaled: yes (divided each row by sum of abs values in each row)
+    minimum sum (abs (rows of A)):              7.34273e+00
+    maximum sum (abs (rows of A)):              3.90863e+05
+
+    symbolic/numeric factorization:      upper bound               actual      %
+    variable-sized part of Numeric object:
+        initial size (Units)                  973420               965437    99%
+        peak size (Units)                   14485789              6118535    42%
+        final size (Units)                  10634638              4692145    44%
+    Numeric final size (Units)              10678564              4732081    44%
+    Numeric final size (MBytes)                162.9                 72.2    44%
+    peak memory usage (Units)               14601588              6234334    43%
+    peak memory usage (MBytes)                 222.8                 95.1    43%
+    numeric factorization flops          2.86257e+10          4.73590e+09    17%
+    nz in L (incl diagonal)                  8478822              6881458    81%
+    nz in U (incl diagonal)                 10870825              2325868    21%
+    nz in L+U (incl diagonal)               19341667              9199346    48%
+    largest front (# entries)                6009865              1427337    24%
+    largest # rows in front                     2245                 2226    99%
+    largest # columns in front                  2677                 1028    38%
+
+    initial allocation ratio used:                 0.208
+    # of forced updates due to frontal growth:     47
+    number of off-diagonal pivots:                 652
+    nz in L (incl diagonal), if none dropped       6881458
+    nz in U (incl diagonal), if none dropped       2325868
+    number of small entries dropped                0
+    nonzeros on diagonal of U:                     7980
+    min abs. value on diagonal of U:               5.94e-03
+    max abs. value on diagonal of U:               7.50e+00
+    estimate of reciprocal of condition number:    7.92e-04
+    indices in compressed pattern:                 156326
+    numerical values stored in Numeric object:     9227183
+    numeric factorization defragmentations:        4
+    numeric factorization reallocations:           4
+    costly numeric factorization reallocations:    3
+    numeric factorization wallclock time (sec):    2.79
+    numeric factorization mflops (wallclock):      1697.14
+    symbolic + numeric wall clock time (sec):      2.84
+    symbolic + numeric mflops (wall clock):        1667.61
+
+    solve flops:                                   4.08112e+07
+    iterative refinement steps taken:              1
+    iterative refinement steps attempted:          1
+    sparse backward error omega1:                  3.61e-16
+    sparse backward error omega2:                  0.00e+00
+    solve wall clock time (sec):                   0.21
+    solve mflops (wall clock time):                190.96
+
+    total symbolic + numeric + solve flops:        4.77671e+09
+    total symbolic+numeric+solve wall clock time:  3.05
+    total symbolic+numeric+solve mflops(wallclock) 1564.27
+
+warning: using cached matrix type
+warning: called from
+    my_solve at line 2 column 5
+    main at line 19 column 11
+    run at line 93 column 5
+
+out-time: 3.066390e+00
+out-erel: 3.854644e-15
