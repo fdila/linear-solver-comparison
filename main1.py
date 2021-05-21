@@ -35,7 +35,8 @@ def spumoni_to_csv(lang = 'matlab', command = 'touch exec.sh'):
             data_row = []
             data_row.append(filename)
             data.append(data_row)
-    
+
+    # Init 
     is_cholesky = 'unknown'
     memory = 'unknown'
     erel = 'unknown'
@@ -56,7 +57,7 @@ def spumoni_to_csv(lang = 'matlab', command = 'touch exec.sh'):
             elif "no." in line:
                 is_cholesky = False     
         # Get memory
-        if "peak memory usage (MBytes)" in line:
+        if "peak memory usage (M" in line:
             templist = line.split('  ')
             templist = [item for item in templist if item != '']
             memory = templist[1].strip()
@@ -78,13 +79,11 @@ def spumoni_to_csv(lang = 'matlab', command = 'touch exec.sh'):
             is_cholesky = 'unknown'
             memory = 'unknown'
             erel = 'unknown'
-            size = 'unknown'    
+            size = 'unknown'
             # Last useful info for this item
             index = index + 1
-        
 
     print(data)
-
 
     # Save to CSV
     with open('./reports/' + lang + '.csv', 'w+', newline='') as file:
@@ -104,10 +103,10 @@ def spumoni_to_csv(lang = 'matlab', command = 'touch exec.sh'):
     except:
         pass
 
+
+
+
 # Exec
-spumoni_to_csv('matlab', 'matlab -nodisplay -nojvm -nosplash -nodesktop -r "run(\'main.m\'); exit;"')
+#spumoni_to_csv('matlab', 'matlab -nodisplay -nojvm -nosplash -nodesktop -r "run(\'main.m\'); exit;"')
 spumoni_to_csv('octave', 'octave --no-gui --eval "run(\'main.m\'); exit;"')
 ##TODO eseguiamo qui anche il codice py?
-
-
-

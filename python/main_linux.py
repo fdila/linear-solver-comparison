@@ -62,6 +62,8 @@ with open('../reports/python_linux.csv', 'w+', newline='') as file:
             [chol, tot_time, erel] = sparse_solve(A,b)
             
             #convert from byte to MB
-            mem_usage = process.memory_info().peak_wset / 10**6
+            mem_usage = process.memory_info().rss / 10**6
             writer.writerow([filename, size, tot_time, mem_usage, erel, chol])
             
+
+

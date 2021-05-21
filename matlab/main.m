@@ -11,6 +11,8 @@ for file_index = 3:length(listing)
 
     try 
         diary on
+        fprintf(1, filename)
+        fprintf(1, '\n')
         spparms('spumoni', 2);
         
         tic;
