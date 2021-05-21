@@ -5,6 +5,8 @@ MATLAB usa una versione di SuiteSparse dell'anteguerra, e usa Fortran BLAS.
 Riconosce da solo che tipo di matrice deve risolvere.
 Usa le cose di SuiteSparse (visto con spumoni).
 
+algoritmo strano MA57 per ifiss, qualcuno dice che è LDL
+
 ## Octave
 Come matlab, riconosce tipo di matrici e usa SuiteSparse (visto con spumoni).
 

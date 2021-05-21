@@ -1,10 +1,5 @@
 listing = dir('../matrixes');
 
-csv_file = fopen('../reports/octave.csv','w');
-C={'Matrix', 'Size', 'Time' ,'Memory','RelError'};
-fprintf(csv_file,'%s,%s,%s,%s,%s\n',C{:});
-formatSpec = '%s,%d,%f,%f,%e\n';
-
 for file_index = 3:length(listing)
     filename = strcat('../matrixes/', listing(file_index).name);
     
@@ -24,13 +19,13 @@ for file_index = 3:length(listing)
         tempo = toc;
 
         erel = norm(x-xe) / norm(xe);
-        
-        C={listing(file_index).name, sizeA, tempo, 0, erel};
-        fprintf(csv_file,formatSpec,C{:});
+
+        fprintf('out-time: %e\n', tempo);
+        fprintf('out-erel: %e\n', erel);
+        fprintf('non-zero entries: %e\n', entries);
         
         catch exception
             disp(exception.message);
     end
 end
-fclose(csv_file);
-%quit;
+quit;

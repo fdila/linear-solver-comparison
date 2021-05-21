@@ -1,2 +1,8 @@
-Matrix,Size,Time,Memory,RelError
-GT01R.mtx,7980,1.003312,0.000000,4.266835e-15
+Matrix,Size,Time,Memory,RelError,isCholesky
+GT01R.mtx,unknown,1.309316e+02,1275.4,3.883396e-12,unknown
+TSC_OPF_1047.mtx,7977,2.209375e+00,222.8,3.854644e-15,unknown
+ifiss_mat.mtx,8139,1.929882e+00,259.2,2.410520e-11,unknown
+ns3Da.mtx,unknown,1.260204e+01,513.4,1.121015e-05,unknown
+G3_circuit.mtx,96307,4.913514e+00,717.1,1.001640e-13,unknown
+bundle_adj.mtx,unknown,9.122728e+01,4289.2,7.198507e-11,unknown
+nd24k.mtx,20414,3.457587e+00,1248.0,1.032228e-15,unknown

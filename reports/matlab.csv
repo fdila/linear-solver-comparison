@@ -1,2 +1,8 @@
-Matrix,Size,Time,Memory,RelError
-GT01R.mtx,7980,0.144080,0.000000,3.054077e-15
+Matrix,NNZ,Time,Memory,RelError,Algorithm
+GT01R.mtx,unknown,10.27575,2302.7,3.523124E-12,True
+TSC_OPF_1047.mtx,7977,0.152424,222.8,2.41596E-15,False
+ifiss_mat.mtx,unknown,0.635108,unknown,5.875148E-12,False
+ns3Da.mtx,unknown,2.544508,2302.7,1.121015E-05,True
+G3_circuit.mtx,96307,1.722917,717.1,8.71162E-15,False
+bundle_adj.mtx,unknown,69.30726,7460.6,4.043466E-11,True
+nd24k.mtx,20414,1.479186,1248,9.483563E-16,False
