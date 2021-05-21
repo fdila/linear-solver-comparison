@@ -10,9 +10,14 @@ for file_index = 3:length(listing)
     b = A*xe;
 
     try 
-        diary on
-        fprintf(1, filename)
-        fprintf(1, '\n')
+        %diary on
+        profile clear;
+        profile('-memory','on');
+        setpref('profiler','showJitLines',1);
+        
+        fprintf("Running Matrix: ");
+        fprintf(filename);
+        fprintf('\n');
         spparms('spumoni', 2);
         
         tic;
@@ -21,9 +26,16 @@ for file_index = 3:length(listing)
         tempo = toc;
         
         erel = norm(x-xe) / norm(xe);
+        
+        profilerInfo = profile('info');
 
+        functionNames = {profilerInfo.FunctionTable.FunctionName};
+        functionRow = find(strcmp(functionNames(:), 'my_solve'));
+        mem = (profilerInfo.FunctionTable(functionRow).PeakMem)/1000; 
+        
         fprintf('out-time: %e\n', tempo);
         fprintf('out-erel: %e\n', erel);
+        fprintf('non-zero values: %e\n', entries);
 
         diary off
         

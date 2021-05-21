@@ -1,4 +1,5 @@
-../matrixes/G3_circuit.mtxsp\: bandwidth = 947128+1+947128.
+Running Matrix: ../matrixes/G3_circuit.mtx
+sp\: bandwidth = 947128+1+947128.
 sp\: is A diagonal? no.
 sp\: is band density (3.63719e-06) > bandden (0.5) to try banded solver? no.
 sp\: is A triangular? no.
@@ -45,9 +46,11 @@ CHOLMOD version 1.7.0, Sept 20, 2008: : status: OK
     (s <= 16 and z < 80%) or (s <= 48 and z < 10%) or (z < 5%)
   OK
 
-out-time: 8.363511e+00
+out-time: 1.027575e+01
 out-erel: 3.523124e-12
-../matrixes/GT01R.mtxsp\: bandwidth = 7614+1+7614.
+non-zero values: 7.660826e+06
+Running Matrix: ../matrixes/GT01R.mtx
+sp\: bandwidth = 7614+1+7614.
 sp\: is A diagonal? no.
 sp\: is band density (0.00678097) > bandden (0.5) to try banded solver? no.
 sp\: is A triangular? no.
@@ -185,9 +188,11 @@ UMFPACK V5.4.0 (May 20, 2009), Info:
 
     total symbolic + numeric + solve flops:        6.76471e+08
 
-out-time: 1.441930e-01
+out-time: 1.524240e-01
 out-erel: 2.415960e-15
-../matrixes/TSC_OPF_1047.mtxsp\: bandwidth = 7988+1+7988.
+non-zero values: 4.309090e+05
+Running Matrix: ../matrixes/TSC_OPF_1047.mtx
+sp\: bandwidth = 7988+1+7988.
 sp\: is A diagonal? no.
 sp\: is band density (0.0303885) > bandden (0.5) to try banded solver? no.
 sp\: is A triangular? no.
@@ -267,9 +272,11 @@ MA57 Numeric Factorization
     Maximum modulus of matrix entry:                3.030365e+04
     *** Return code from MA57BD:  0
   Number of passes to properly factor the matrix:  2
-out-time: 4.891820e-01
+out-time: 6.351080e-01
 out-erel: 5.875148e-12
-../matrixes/bundle_adj.mtxsp\: bandwidth = 510044+1+510044.
+non-zero values: 2.012833e+06
+Running Matrix: ../matrixes/bundle_adj.mtx
+sp\: bandwidth = 510044+1+510044.
 sp\: is A diagonal? no.
 sp\: is band density (7.6685e-05) > bandden (0.5) to try banded solver? no.
 sp\: is A triangular? no.
@@ -316,9 +323,11 @@ CHOLMOD version 1.7.0, Sept 20, 2008: : status: OK
     (s <= 16 and z < 80%) or (s <= 48 and z < 10%) or (z < 5%)
   OK
 
-out-time: 1.901858e+00
+out-time: 2.544508e+00
 out-erel: 1.121015e-05
-../matrixes/ifiss_mat.mtxsp\: bandwidth = 85426+1+85426.
+non-zero values: 2.020791e+07
+Running Matrix: ../matrixes/ifiss_mat.mtx
+sp\: bandwidth = 85426+1+85426.
 sp\: is A diagonal? no.
 sp\: is band density (0.000393149) > bandden (0.5) to try banded solver? no.
 sp\: is A triangular? no.
@@ -449,9 +458,11 @@ UMFPACK V5.4.0 (May 20, 2009), Info:
 
     total symbolic + numeric + solve flops:        5.57508e+09
 
-out-time: 1.481845e+00
+out-time: 1.722917e+00
 out-erel: 8.711620e-15
-../matrixes/nd24k.mtxsp\: bandwidth = 68114+1+68114.
+non-zero values: 3.599932e+06
+Running Matrix: ../matrixes/nd24k.mtx
+sp\: bandwidth = 68114+1+68114.
 sp\: is A diagonal? no.
 sp\: is band density (0.00555546) > bandden (0.5) to try banded solver? no.
 sp\: is A triangular? no.
@@ -498,9 +509,11 @@ CHOLMOD version 1.7.0, Sept 20, 2008: : status: OK
     (s <= 16 and z < 80%) or (s <= 48 and z < 10%) or (z < 5%)
   OK
 
-out-time: 5.718213e+01
+out-time: 6.930726e+01
 out-erel: 4.043466e-11
-../matrixes/ns3Da.mtxsp\: bandwidth = 20408+1+20408.
+non-zero values: 2.871563e+07
+Running Matrix: ../matrixes/ns3Da.mtx
+sp\: bandwidth = 20408+1+20408.
 sp\: is A diagonal? no.
 sp\: is band density (0.00403041) > bandden (0.5) to try banded solver? no.
 sp\: is A triangular? no.
@@ -638,5 +651,6 @@ UMFPACK V5.4.0 (May 20, 2009), Info:
 
     total symbolic + numeric + solve flops:        1.54484e+10
 
-out-time: 1.177462e+00
+out-time: 1.479186e+00
 out-erel: 9.483563e-16
+non-zero values: 1.679599e+06

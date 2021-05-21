@@ -12,7 +12,6 @@ for file_index = 3:length(listing)
     b = A*xe;
 
     try 
-        %diary on
         spparms('spumoni', 2);
         
         tic;
@@ -23,12 +22,10 @@ for file_index = 3:length(listing)
 
         fprintf('out-time: %e\n', tempo);
         fprintf('out-erel: %e\n', erel);
-
-        %diary off  
+        fprintf('non-zero entries: %e\n', entries);
         
         catch exception
             disp(exception.message);
     end
 end
-
 quit;

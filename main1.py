@@ -107,6 +107,9 @@ def spumoni_to_csv(lang = 'matlab', command = 'touch exec.sh'):
 
 
 # Exec
-#spumoni_to_csv('matlab', 'matlab -nodisplay -nojvm -nosplash -nodesktop -r "run(\'main.m\'); exit;"')
+spumoni_to_csv('matlab', 'matlab -nodisplay -nojvm -nosplash -nodesktop -r "run(\'main.m\'); exit;"')
 spumoni_to_csv('octave', 'octave --no-gui --eval "run(\'main.m\'); exit;"')
 ##TODO eseguiamo qui anche il codice py?
+
+
+

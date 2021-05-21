@@ -39,7 +39,7 @@ process = psutil.Process(os.getpid())
 with open('../reports/python_linux.csv', 'w+', newline='') as file:
     writer = csv.writer(file)
     # Set csv header 
-    writer.writerow(["Matrix", "Size", "Time", "Memory", "RelError", "isCholesky"])
+    writer.writerow(["Matrix", "NNZ", "Time", "Memory", "RelError", "isCholesky"])
     
     for filename in os.listdir('../matrixes/'):
         
@@ -49,6 +49,7 @@ with open('../reports/python_linux.csv', 'w+', newline='') as file:
             # Read the matrix
             A = mmread('../matrixes/' + filename)
             A = csc_matrix(A)
+            nnz = A.count_nonzero()
             
             # Create array [1...1]
             size = A.shape[0]        
@@ -63,7 +64,7 @@ with open('../reports/python_linux.csv', 'w+', newline='') as file:
             
             #convert from byte to MB
             mem_usage = process.memory_info().rss / 10**6
-            writer.writerow([filename, size, tot_time, mem_usage, erel, chol])
+            writer.writerow([filename, nnz, tot_time, mem_usage, erel, chol])
             
 
 
