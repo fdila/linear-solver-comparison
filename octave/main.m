@@ -12,6 +12,11 @@ for file_index = 3:length(listing)
     b = A*xe;
 
     try 
+        fprintf("\n\n[OUTPUT] START");
+        fprintf("\n[OUTPUT] MATRIX: ");
+        fprintf(filename);
+        fprintf('\n');
+
         spparms('spumoni', 2);
         
         tic;
@@ -20,11 +25,14 @@ for file_index = 3:length(listing)
 
         erel = norm(x-xe) / norm(xe);
 
-        fprintf('out-time: %e\n', tempo);
-        fprintf('out-erel: %e\n', erel);
-        fprintf('non-zero entries: %e\n', entries);
+        fprintf('[OUTPUT] TIME: %e\n', tempo);
+        fprintf('[OUTPUT] EREL: %e\n', erel);
+        fprintf('[OUTPUT] NNZ: %e\n', entries);
+
+        fprintf("\n[OUTPUT] END\n\n");
         
         catch exception
+            disp("Error:")
             disp(exception.message);
     end
 end

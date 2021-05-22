@@ -38,7 +38,7 @@ for file_index = 3:length(listing)
         fprintf('[OUTPUT] EREL: %e\n', erel);
         fprintf('[OUTPUT] NNZ: %e\n', entries);
 
-        fprintf("\n[OUTPUT] END");
+        fprintf("\n[OUTPUT] END\n\n");
         diary off
        
         catch exception
