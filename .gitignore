@@ -1,5 +1,6 @@
 ### DATA ###
 *.mtx
+diary
 
 ### MATLAB ###
 # Windows default autosave extension
