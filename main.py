@@ -68,7 +68,10 @@ def spumoni_to_csv(lang = 'matlab', command = 'touch exec.sh'):
         if "peak memory usage (M" in line:
             templist = line.split('  ')
             templist = [item for item in templist if item != '']
-            memory = templist[1].strip()
+            if is_cholesky:
+                memory = templist[2].strip()
+            else:
+                memory = templist[2].strip()
         # Get time
         if "[OUTPUT] TIME" in line:
             templist = line.split(':')
