@@ -1,0 +1,8 @@
+Matrix,NNZ,Time,Memory,RelError,isCholesky
+G3_circuit.mtx,7.660826e+06,3.090192e+01,2302.7,4.909732e-12,unknown
+GT01R.mtx,4.309090e+05,9.572508e-01,222.8,4.266835e-15,unknown
+TSC_OPF_1047.mtx,2.012833e+06,1.166944e+00,259.2,3.499999e-12,unknown
+bundle_adj.mtx,2.020791e+07,9.049630e+00,513.4,1.121015e-05,unknown
+ifiss_mat.mtx,3.599932e+06,2.102995e+00,717.1,7.316572e-15,unknown
+nd24k.mtx,2.871563e+07,7.340853e+01,7460.6,3.738862e-11,unknown
+ns3Da.mtx,1.679599e+06,1.477325e+00,1248.0,9.882656e-16,unknown
